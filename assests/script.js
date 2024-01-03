@@ -1,5 +1,5 @@
 
-
+var questionIndex=0
 const intro = document.querySelector(".intro");
 const start = document.querySelector(".start-bt");
 const quiz = document.querySelector(".quiz");
@@ -24,4 +24,11 @@ function setTime() {
       }
   
     }, 1000);
+
   }
+function getQuestion() {
+  var currentQuestion = question[questionIndex]
+  console.log(currentQuestion)
+ 
+}
+getQuestion()
