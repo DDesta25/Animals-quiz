@@ -20,7 +20,7 @@ var question = [
             "choice1", "choice2", "choice3",
         ],
         answers: "choice1"
-    },
+    },             
     {
         title: "testtitle4",
         choices: [
