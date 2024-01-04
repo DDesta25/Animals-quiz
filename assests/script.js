@@ -40,27 +40,31 @@ function getQuestion() {
     var choiceElement = document.createElement("button");
     choiceElement.setAttribute("value", singleChoice);
     choiceElement.textContent = singleChoice;
+    choiceElement.onclick = answerClick;
     answer.appendChild(choiceElement);
   }
 }
 function answerClick(event) {
   var buttonClick = event.target;
-  if (!buttonClick.matches(".answer")) {
-    return;
-  }
+  // if (!buttonClick.matches(".answer")) {
+  //   return;
+  // }
   if (buttonClick.value !== question[questionIndex].answers) {
     console.log("value" + buttonClick.value);
     console.log("answer" + question[questionIndex].answers);
     secondsLeft -= 15;
     time.textContent = secondsLeft;
+    feedback.classList.remove("hide");
     feedback.textContent = "oops";
   } else {
+    feedback.classList.remove("hide");
     feedback.textContent = "right on";
   }
   setTimeout(function () {
-    feedback.setAttribute("class", "feedback hide");
-  }, 1000);
+    feedback.classList.add("hide");
+  }, 500);
   questionIndex++;
+  getQuestion();
 }
 
 // create function when you select a question
@@ -68,4 +72,4 @@ function answerClick(event) {
 //  create a function when saving high scores
 // create an event listener when you click the choice and also submitting high score
 
-answer.addEventListener("click", console.log("i did it"));
+// answer.addEventListener("click", console.log("i did it"));
