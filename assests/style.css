@@ -1,6 +1,7 @@
-
-
 /* this class must be at the bottom */
-.hide{
-    display: none;
+.hide {
+  display: none;
+}
+.feedback {
+  color: pink;
 }
